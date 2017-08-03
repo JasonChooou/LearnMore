@@ -1,0 +1,568 @@
+/* 重置样式 */
+*{margin: 0;padding: 0;}
+body{
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+}
+ol,ul,li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+	display: block;
+	color: #000;
+}
+img{
+	border: none;
+	display: block;
+}
+.clearfloat{
+	zoom: 1;
+}
+.clearfloat:after{
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0;
+}
+
+/* 设定样式 */
+.public-container{
+	position: relative;
+	margin: 0 auto;
+	width: 1280px;
+}
+.public-header{
+	width: 100%;
+	height: 57px;
+	background: #fff;
+}
+.public-footer{
+	width: 100%;
+	height: 58px;
+	background: #2f2f38;
+}
+.public-header .logo-pic{
+	width: 31px;
+	height: 31px;
+	float: left;
+	margin-top: 13px;
+	margin-right: 11px;
+}
+.public-header .logo-text{
+	font-size: 21px;
+	font-family: "SimHei";
+	float: left;
+	margin-top: 19px;
+}
+.public-header .header-nav{
+	font-size: 14px;
+	color: #787b83;
+	float: right;
+	margin-right: 5px;
+}
+.public-header .header-nav .item{
+	float: left;
+}
+.public-header .header-nav .item a:link , .public-header .header-nav .item a:visited{ 
+	padding: 17px;
+	margin: 0 6px;
+}
+.public-header .header-nav .item a:hover , .public-header .header-nav .item a:active{
+	padding: 17px;
+	margin: 0 6px;
+	color: #e74f4d;
+	border-bottom: 4px solid #e74f4d;
+}
+
+.public-header .header-login{
+	float: right;
+	margin-top: 17px;
+}
+.public-header .header-login .login-icon{
+	width: 14px;
+	height: 17px;
+	float: left;
+	margin-right: 5px;
+}
+.public-header .header-login .login-text{
+	float: left;
+	font-size: 14px;
+	color: #e74f4d;
+}
+.public-footer .footer-l{
+	font-family: "SimSun";
+	color: #fff;
+	float: left;
+	margin-top: 30px;
+	margin-left: 100px;
+
+}
+.public-footer .footer-r{
+	font-family: "SimSun";
+	color: #fff;
+	float: right;
+	margin-top: 30px;
+	margin-right: 40px;
+}
+.index-banner{
+	height: 690px;
+	background: #fff;
+}
+.index-banner .banner-bg{
+	height: 690px;
+	overflow: hidden;
+}
+.index-banner .banner{
+	width: 1280px;
+	height: 690px;
+	position: relative;
+}
+.index-banner .title{
+	position: absolute;
+	top: 230px;
+	left: 116px; 	
+	font-size: 60px;
+	color: #fff;
+}
+.index-banner .txt{
+	position: absolute;
+	top: 310px;
+	left: 124px; 	
+	font-size: 21px;
+	color: #fffdfd;
+}
+.index-banner .btn{
+	width: 331px;
+	height: 65px;
+	position: absolute;
+	top: 430px;
+	left: 126px;
+	line-height: 65px;	
+	text-align: center;
+	font-size: 30px;
+	color: #fff;
+	background: #e74f4d;
+}
+.index-list{
+	height: 250px;
+	background: #fff;
+}
+.index-list .list{
+	width: 318px;
+	height: 250px;
+	position: relative;
+	float: left;
+	background: #fff;
+}
+.index-list .list-icon{
+	margin: 45px auto;
+}
+.index-list .list-txt{
+	position: absolute;
+	top: 130px;
+	font-family: "simHei";
+	color: #767777;
+	padding: 0 80px;
+	text-align: center;
+}
+.index-list .list-line{
+	position: absolute;
+	top: 130px;
+	right: 0px;
+	height: 54px;
+	border-left: 2px solid #bbb;
+}
+.index-about{
+	width: 100%;
+	height: 360px;
+	background: #edecec;
+}
+.index-about .about-logo{
+	margin: 0px auto;
+	padding-top: 90px;
+	padding-bottom: 50px;
+}
+.index-about .about-text{
+	font-size: 54px;
+	font-family: "simHei";
+	color: #a1a1a1;
+	text-align: center;
+}
+
+.index-search{
+	position: relative;
+	width: 1280px;
+	height: 340px;
+	margin: 0 auto;
+	background: url("../images/index-search-bg.jpg");
+}
+.index-search .search-text{
+	text-align: center;
+}
+.index-search .search-text .title{
+	font-size: 21px;
+	color: #fff;
+	padding-top: 52px;
+	padding-bottom: 10px;
+}
+.index-search .search-text .line{
+	width: 31px;
+	border-top: 3px solid #fff;
+	margin: 0 auto;
+}
+.index-search .search-text .txt{
+	padding-top: 20px;
+	color: #fff;	
+}
+.index-search .search-box{
+	position: absolute;
+	top: 172px;
+	left: 126px;
+}
+.index-search .select-box{
+	appearance:none;
+  	-moz-appearance:none;
+  	-webkit-appearance:none;
+	width: 236px;
+	height: 36px;
+	margin-right: 24px;
+	padding-left: 10px;
+	color: #a8aaaa;
+	background: url("../images/search-icon.png") #fff no-repeat 208px;
+	font-size: 14px;
+}
+.index-search .select-submit{
+	width: 236px;
+	height: 36px;
+	background: #be4e48;
+	text-align: center;
+	line-height: 36px;
+	font-size: 14px;
+	color: #fff;
+	letter-spacing: 20px;
+	border: none;
+}
+.index-activity{
+	width: 100%;
+	height: 600px;
+	background: #f7f7f7;
+}
+.index-activity .actbox{
+	width: 990px;
+	margin: 0 auto;
+}
+.index-activity .actbox .act{
+	text-align: center;
+	float: left;
+	margin-top: 100px;
+	margin-right: 36px;
+}
+.index-activity .actbox .act:last-child{
+	margin-right: 0;
+} 
+.index-activity .actbox .act-pic{
+	width: 218px;
+	height: 336px;
+	background: #fff;
+	border: 1px solid #dedede;
+}
+.index-activity .actbox .act-pic img{
+	margin: 12px auto;
+}
+.index-activity .actbox .act-title{
+	font-size: 14px;
+	padding-top: 14px;
+}
+.index-activity .actbox .act-content{
+	color: #818181;
+	padding-top: 10px;
+}
+.index-activity .actbox .act-title-2{
+	font-size: 20px;
+	letter-spacing: 16px;
+	padding-top: 0px;
+}
+.index-activity .actbox .act-content-2{
+	padding-bottom: 8px;
+}
+.index-news{
+	width: 100%;
+	height: 1086px; 
+}
+.index-news .news-t{
+	height: 566px;
+}
+.index-news .news-b{
+	height: 520px;
+}
+.index-news .news-t-l{
+	width: 851px;
+	height: 566px;
+	float: left;
+	position: relative;
+	text-align: center;
+	color: #fff;
+	background: url("../images/index-news-pic1.jpg");
+}	
+.index-news .news-t-l .title-zh{
+	font-size: 50px;
+	padding-top: 132px;
+}	
+.index-news .news-t-l .title-en{
+	font-size: 158px;
+	margin-top: -40px;
+}	
+.index-news .news-t-l .content{
+	font-size: 20px;
+	line-height: 36px;
+	margin-top: -20px;
+}	
+.index-news .news-t-l .triangle{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-right: 25px solid #fff;
+}
+.index-news .news-t-r{
+	width: 429px;
+	height: 566px;
+	float: right;
+}
+.index-news .news-t-r .icon{
+	margin: 165px auto 0 auto;
+}
+.index-news .news-t-r .txt{
+	font-family: "SimSun";
+	color: #aaa;
+	line-height: 30px;
+	margin: 14px 70px;
+}
+.index-news .news-t-r .more-btn{
+	width: 100px;
+	height: 32px;
+	border: 2px solid #e25c60;
+	margin: 25px auto;
+	color: #e25c60;
+	line-height: 32px;
+	text-align: center;
+}
+.index-news .news-t-r .icon-group{
+	margin-top: -160px;
+	text-align: center;
+}
+.index-news .news-t-r .icon-group .icon{
+	display: inline-block;
+	width: 10px;
+	height: 11px;
+	border-radius: 50%;
+	border: 1px solid #929292;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.index-news .news-t-r .icon-group .icon-active{
+	background: #929292;
+}
+.index-news .news-b-l{
+	width: 425px;
+	height: 520px;
+	float: left;
+	text-align: center;
+}
+.index-news .news-b-l-r{
+	background: #e74f4d;
+	color: #fff;
+}
+.index-news .news-b-l .text{
+	font-size: 21px;
+	font-family: "SimHei";
+	line-height: 30px;
+	margin-top: 170px;
+}
+.index-news .news-b-l .line{
+	width: 31px;
+	border-top: 3px solid #fff;
+	margin: 24px auto;
+}
+.index-news .news-b-l .more-btn{
+	width: 170px;
+	height: 44px;
+	border: 1px solid #fff;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 44px;
+	font-size: 21px;
+	font-family: "SimHei";
+}
+.index-news .news-b-l .more-btn a{
+	color: #fff;
+}
+.index-news .news-b-l-w .text{
+	color: #000;
+}
+.index-news .news-b-l-w .line{
+	border-top: 3px solid #000;
+}
+.index-news .news-b-l-w .more-btn{
+	width: 170px;
+	height: 44px;
+	border: 1px solid #e74f4d;
+}
+.index-news .news-b-l-w .more-btn a{
+	color: #e74f4d;
+}
+.index-news .news-b-r{
+	position: relative;
+	width: 430px;
+	height: 520px;
+	background: url("../images/index-news-pic2.jpg");
+	float: left;
+} 
+.index-news .news-b-r .triangle{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 25px solid #fff;
+}
+.index-form{
+	width: 100%;
+	height: 750px;
+	background: #fff;
+}
+.index-form .index-form-box{
+	position: relative;
+}
+.index-form .form-title{
+	text-align: center;
+}
+.index-form .form-title .title{
+	font-size: 30px;
+	font-family: "SimHei";
+	padding-top: 120px;
+	padding-bottom: 10px;
+}
+.index-form .form-title .line{
+	width: 32px;
+	border-top: 3px solid #e74f4d;
+	margin: 0 auto;
+}
+.index-form .form-title .comment{
+	width: 420px;
+	padding-top: 15px;
+	margin: 0 auto;
+	color: #aaa;
+	line-height: 18px;
+}
+.index-form .form-pact{
+	width: 290px;
+	height: 290px;
+	position: absolute;
+	top: 300px;
+	left: 138px;
+}
+.index-form .form-pact .title{
+	font-size: 14px;
+	font-family: "SimHei";
+	color: #231815;
+	padding-top: 36px;
+	padding-bottom: 20px;
+}
+.index-form .form-pact .title-1{
+	padding-top: 0px;
+}
+.index-form .form-pact .txt{
+	font-family: "SimSun";
+	color: #9d9b9a;
+	line-height: 21px;
+	padding-bottom: 8px;
+}
+.index-form .form-pact .btn{
+	width: 41px;
+	height: 6px;
+	background: url("../images/form-more-icon.png");
+	float: right;
+}	
+.index-form .form-appli{
+	width: 640px;
+	height: 290px;
+	position: absolute;
+	top: 300px;
+	left: 500px;
+}
+.index-form .form-appli .form-s{
+	width: 300px;
+	height: 40px;
+	border: none;
+	background: #ededee;
+	margin-bottom: 14px;
+	padding-left: 10px;
+}
+.index-form .form-appli .form-l{
+	margin-right: 16px;
+}
+.index-form .form-appli .form-m{
+	width: 620px;
+	height: 110px;
+	border: none;
+	background: #ededee;
+	margin-bottom: 14px;
+	padding: 10px;
+}
+.index-form .form-appli .submit{
+	width: 640px;
+	height: 40px;
+	border: none;
+	background: #ededee;
+	text-align: center;
+	font-size: 14px;
+	font-family: "SimHei";
+	color: #333;
+}
+.index-contact{
+	width: 100%;
+	height: 360px;
+	background: #32363e;
+	text-align: center;
+}
+.index-contact .title{
+	display: block;
+	font-size: 21px;
+	font-family: "SimHei";
+	color: #fff;
+	padding-top: 90px;
+}
+.index-contact .txt{
+	width: 470px;
+	margin: 0 auto;
+	font-family: "SimSun";
+	color: #fff;
+	padding-top: 10px;
+	padding-bottom: 30px;	
+}
+.index-contact .emailbox{
+	width: 410px;
+	height: 36px;
+	padding: 0 10px;
+	font-size: 14px;
+}
+.index-contact .submit{
+	width: 85px;
+	height: 40px;
+	border: none;
+	background: #6f7178;
+	font-size: 15px;
+	color: #fff;
+	letter-spacing: 5px;
+}
+.index-contact .logo-group{
+	display: inline-block;
+}
+.index-contact .logo{
+	float: left;
+	margin: 36px 15px;
+}
