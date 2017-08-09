@@ -13,17 +13,15 @@
 
 <script type="text/javascript">
 (function() {
-  /*    
+  /*
   在注释下方写下代码
   给按钮button绑定一个点击事件
   在事件处理函数中
   获取aqi-input输入的值，并显示在aqi-display中
   */
-  var butt=document.getElementById("button");
-  var input=document.getElementById("aqi-input");
-  var display=document.getElementById("aqi-display");
-  butt.onclick=function(){
-    display.innerHTML=input.value;
+  function $(id){return document.getElementById(id);}
+  $('button').onclick = function(){
+    $('aqi-display').innerHTML = ($('aqi-input').value);
   };
 })();
 </script>
