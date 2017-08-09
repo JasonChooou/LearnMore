@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>IFE JavaScript Task 04</title>
+    <style>
+        #btn-right-in{
+            margin-right:20px;
+        }
+        .box-list{
+        }
+        .input-box{
+            min-width:40px;
+            height:40px;
+            background:#f00;
+            margin:5px;
+            text-align: center;
+            padding:0 5px 0 5px;
+            line-height: 40px;
+            display:inline-block;
+            color:#fff;
+            font-size:16px;
+            font-family:Microsoft Yahei;
+            cursor: pointer;
+        }
+    </style>
+
+<script>
+window.onload = function(){
+    function $(id){return document.getElementById(id);}
+    //console.log(document.getElementById('input').value);
+    function btnLeftIn(){
+        var input = $('input').value;
+        var div = document.createElement('div');
+        div.className = 'input-box';
+        div.innerHTML = input;
+        $('box-list').prepend(div);
+    }
+    function btnRightIn(){
+        var input = $('input').value;
+        var div = document.createElement('div');
+        div.className = 'input-box';
+        div.innerHTML = input;
+        $('box-list').append(div);
+    }
+    function btnLeftOut(){
+        if($('box-list').firstChild != undefined)
+            $('box-list').firstChild.remove(0);
+    }
+    function btnRightOut(){
+        if($('box-list').lastChild != undefined)
+            $('box-list').lastChild.remove(0);
+    }
+    function init(){
+        var x = $('box-list').getElementsByTagName('div');
+        console.log(x);
+        x.onclick = function(){
+            $('box-list').lastChild.remove(0);
+        };
+        $('btn-left-in').onclick = function(){
+            btnLeftIn();
+        };
+        $('btn-right-in').onclick = function(){
+            btnRightIn();
+        }
+        $('btn-left-out').onclick = function(){
+            btnLeftOut();
+        }
+        $('btn-right-out').onclick = function(){
+            btnRightOut();
+        }
+    }
+    init();
+};
+
+</script>
+
+</head>
+<body>
+    <input type="text" id="input"/>
+    <button id="btn-left-in">左侧入</button>
+    <button id="btn-right-in">右侧入</button>
+    <button id="btn-left-out">左侧出</button>
+    <button id="btn-right-out">右侧出</button>
+    <div id="box-list"></div>
+</body>
+</html>
