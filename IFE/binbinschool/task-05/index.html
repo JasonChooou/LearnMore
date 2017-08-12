@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>IFE JavaScript Task 04</title>
+    <style>
+        #btnRightIn{
+            margin-right:20px;
+        }
+        #btnSort{
+            margin-left:20px;
+        }
+        #numList li{
+            width:16px;
+            background:#DE3B3B;
+            margin:10px 1px 0 1px;
+            text-align: center;
+            display:inline-block;
+            cursor: pointer;
+            vertical-align:bottom;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            //声明变量
+            var inNum = document.getElementById('inNum');
+            var btnLeftIn = document.getElementById('btnLeftIn');
+            var btnRightIn = document.getElementById('btnRightIn');
+            var btnLeftOut = document.getElementById('btnLeftOut');
+            var btnRightOut = document.getElementById('btnRightOut');
+            var numList = document.getElementById('numList');
+            //数字显示函数
+            function numIn(direction){
+                if(numList.childNodes.length > 60){
+                    alert('已经超出数字列表个数上限，无法继续输入');
+                }
+                else{
+                        if(inNum.value == ''){                       //未输入提示
+                        alert('还没输入数字呢，快输入！');
+                        inNum.focus();
+                    }
+                    else if(isNaN(inNum.value)){
+                        alert('你输的根本不是数字啊！');         //错误输入提示
+                        inNum.focus();
+                    }
+                    else if(inNum.value < 10 || inNum.value > 100){
+                        alert('请您输入10-100之间的数字');
+                        inNum.focus();
+                    }
+                    else{
+                        var nLi = document.createElement('li');
+                        nLi.style.height = inNum.value+'px';
+                        if(direction == 'left'){                 //左侧入
+                            numList.prepend(nLi);
+                            inNum.value = '';
+                        }
+                        else if(direction == 'right'){           //右侧入
+                            numList.append(nLi);
+                            inNum.value = '';
+                        }
+                    }
+                }
+            }
+            //数字删除函数
+            function numOut(direction,node){
+                if(numList.childNodes.length > 0){
+                    if(direction == 'left'){                      //左侧出
+                        alert('你删除了'+numList.removeChild(numList.firstChild).style.height.slice(0,-2));
+                        //numList.removeChild(numList.firstChild);
+                    }
+                    else if(direction == 'right'){
+                        alert('你删除了'+numList.removeChild(numList.lastChild).style.height.slice(0,-2));
+                        //numList.removeChild(numList.lastChild);
+                    }
+                    else{
+                        alert('你删除了'+numList.removeChild(node).style.height.slice(0,-2));
+                        //numList.removeChild(node);
+                    }
+                }
+                else{
+                    alert('没有可以删除的了');
+                }
+            }
+            //实现排序显示函数
+            function showSort(){
+                var arr = [];
+                var length = numList.childNodes.length;
+                if(length>0){
+                    for(var i=0;i<length;i++){
+                        arr[i]=numList.childNodes[i].style.height.slice(0, -2);
+                    }
+                    arr = arr.sort(function(a,b){return a-b});
+                    for(var i=0;i<length;i++){
+                        numList.childNodes[i].style.height = arr[i]+'px';
+                    }
+                }
+                else{alert('什么都没有，我怎么排序啊。');}
+            }
+            //函数调用
+            function init(){
+                btnLeftIn.onclick = function(){numIn('left');}
+                btnRightIn.onclick = function(){numIn('right');}
+                btnLeftOut.onclick = function(){numOut('left');}
+                btnRightOut.onclick = function(){numOut('right');}
+                numList.onclick = function(){numOut('',event.target);}
+                btnSort.onclick = function(){showSort();}
+            }
+            init();
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="inNum" name="number" placeholder="请输入数字" autofocus="autofocus"/>
+    <button id="btnLeftIn">左侧入</button>
+    <button id="btnRightIn">右侧入</button>
+    <button id="btnLeftOut">左侧出</button>
+    <button id="btnRightOut">右侧出</button>
+    <button id="btnSort">排序</button>
+    <ul id="numList"></ul>
+</body>
+</html>
