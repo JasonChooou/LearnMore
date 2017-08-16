@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>IFE JavaScript Task 04</title>
+    <style>
+        #btnRightIn{
+            margin-right:20px;
+        }
+        #numList li{
+            width:40px;
+            height:40px;
+            background:#f00;
+            margin:5px;
+            text-align: center;
+            padding:0 5px 0 5px;
+            line-height: 40px;
+            display:inline-block;
+            color:#fff;
+            font-size:16px;
+            font-family:Microsoft Yahei;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            //声明变量
+            var inNum = document.getElementById('inNum');
+            var btnLeftIn = document.getElementById('btnLeftIn');
+            var btnRightIn = document.getElementById('btnRightIn');
+            var btnLeftOut = document.getElementById('btnLeftOut');
+            var btnRightOut = document.getElementById('btnRightOut');
+            var numList = document.getElementById('numList');
+            var li = document.getElementsByTagName('li');
+            //数字显示函数
+            function numIn(direction){
+                if(inNum.value == ''){                       //未输入提示
+                    alert('还没输入数字呢，快输入！');
+                    inNum.focus();
+                }
+                else if(isNaN(inNum.value)){
+                    alert('你输的根本不是数字啊！');         //错误输入提示
+                    inNum.value = '';
+                    inNum.focus();
+                }
+                else{
+                    var nLi = document.createElement('li');
+                    nLi.innerHTML = inNum.value;
+                    if(direction == 'left'){                 //左侧入
+                        numList.prepend(nLi);
+                        inNum.value = '';
+                    }
+                    else if(direction == 'right'){           //右侧入
+                        numList.append(nLi);
+                        inNum.value = '';
+                    }
+                }
+            }
+            //数字删除函数
+            function numOut(direction,node){
+                if(numList.childNodes.length > 0){
+                    if(direction == 'left'){                      //左侧出
+                        alert('你删除了'+numList.removeChild(numList.firstChild).innerHTML);
+                        //numList.removeChild(numList.firstChild);
+                    }
+                    else if(direction == 'right'){
+                        alert('你删除了'+numList.removeChild(numList.lastChild).innerHTML);
+                        //numList.removeChild(numList.lastChild);
+                    }
+                    else{
+                        alert('你删除了'+numList.removeChild(node).innerHTML);
+                        //numList.removeChild(node);
+                    }
+                }
+                else{
+                    alert('没有可以删除的了');
+                }
+            }
+            function numClickOut(){
+                this.remove(0);
+            }
+            //函数调用
+            function init(){
+                btnLeftIn.onclick = function(){numIn('left');}
+                btnRightIn.onclick = function(){numIn('right');}
+                btnLeftOut.onclick = function(){numOut('left');}
+                btnRightOut.onclick = function(){numOut('right');}
+                numList.onclick = function(){numOut('',event.target);}
+            }
+            init();
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="inNum" name="number" placeholder="请输入数字" autofocus="autofocus"/>
+    <button id="btnLeftIn">左侧入</button>
+    <button id="btnRightIn">右侧入</button>
+    <button id="btnLeftOut">左侧出</button>
+    <button id="btnRightOut">右侧出</button>
+    <ul id="numList"></ul>
+</body>
+</html>
