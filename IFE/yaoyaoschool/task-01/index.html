@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>task-01</title>
+    <style>
+
+body{
+    text-align:center;
+    font-family: Microsoft Yahei;
+}
+.title{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 60px 0;
+}
+.txt{
+    font-weight: bold;
+}
+.form-control{
+    width: 240px;
+    height: 24px;
+    border-style: none;
+    border-radius: 2px;
+    border: 1px solid #888;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin:5px 10px 0px 5px;
+}
+.promptTxt{
+    color: #888;
+}
+.btn{
+    background-color: #1FB5E3;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 7px 8px;
+}
+
+
+    </style>
+</head>
+<body>
+    <p class="title">task-01 表单</p>
+    <div class="form-group">
+        <label type="text" for="inputname" class="txt">名称</label>
+        <input type="text" class="form-control" id="inputname" placeholder="name" />
+        <button type="button" class="btn" id="button">验证</button>
+        <p id="prompt" class="promptTxt">必填，长度为4~16个字符</p>
+    </div>
+</body>
+<script>
+    //获取ID
+    var inputname = document.getElementById('inputname');
+    var button = document.getElementById('button');
+    var promptLabel = document.getElementById('prompt');
+
+    //筛选规则
+    var regYchinese = /[\u4E00-\u9FA5]/g; //汉字
+    var regNchinese = /[^\u4E00-\uF9A5\uf900-\ufa2d]/g; //匹配非中文
+    var regTrim = /^\s+|\s+$/g; //删除字符串两侧的空白字符
+
+    button.addEventListener("click",function(){
+        var inputvalue = inputname.value;
+        //计算长度
+        var length = inputvalue.replace(regTrim,'').replace(regYchinese,'').length + inputvalue.replace(regTrim,'').replace(regNchinese,'').length;
+        console.log(length);
+
+        if(length == 0){
+            inputname.style.border = '1px solid red';
+            promptLabel.innerHTML = '名称不能为空';
+            promptLabel.style.color = '#DE0012';
+        }
+        else if(length >= 4 && length <= 16){
+            inputname.style.border = '1px solid green';
+            promptLabel.innerHTML = '名称格式正确';
+            promptLabel.style.color = 'green';
+        }
+        else{
+            inputname.style.border = '1px solid red';
+            promptLabel.innerHTML = '必填，长度为4~16个字符';
+            promptLabel.style.color = '#DE0012';
+        }
+
+    })
+</script>
+</html>
